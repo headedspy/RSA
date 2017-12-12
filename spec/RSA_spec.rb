@@ -23,46 +23,15 @@ describe RSA do
 			it "returns array with 3 values" do
 				arr= rsa.new_key
 				expect(arr.length).to eq 3
-			end
-
-			it "returns correct n" do
-				arr=rsa.new_key
-				expect(arr[0]).to eq rsa.n
-			end
-
-			it "returns correct e" do
-				arr=rsa.new_key
-				expect(arr[1]).to eq rsa.e
-			end
-
-			it "returns correct d" do
-				arr=rsa.new_key
-				expect(arr[2]).to eq rsa.d
-			end
+			end		
 		end
 	end
 
 	describe "Encrypt&Decrypt 1 word" do
 		rsa = RSA.new(0,0,0)
-		rsa.new_key
-		msg = "Test"
-
-		context "Given text message" do
-			it "Encrypts it to something other" do
-				expect(rsa.encrypt(msg)).not_to eq msg
-			end
-
-			it "Decrypts correctly" do
-				crypt = rsa.encrypt(msg)
-				expect(rsa.decrypt(crypt)).to eq msg
-			end
-		end
-	end
-
-	describe "Encrypt&Decrypt 2 words" do
-		rsa = RSA.new(0,0,0)
-		rsa.new_key
-		msg = "Random words"
+		arr = rsa.new_key
+		rsa = RSA.new(arr[0], arr[1], arr[2]);
+		msg = "Te st"
 
 		context "Given text message" do
 			it "Encrypts it to something other" do

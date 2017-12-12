@@ -61,9 +61,9 @@ class RSA
 			end
 		end
 	
-		@nConst = n
-		@eConst = e
-		@dConst = d
+		#@nConst = n
+		#@eConst = e
+		#@dConst = d
 
 		rValue = Array.new
 		rValue << n
@@ -92,8 +92,3 @@ class RSA
 		new
 	end
 end
-
-#rsa = RSA.new(0,0,0)
-#rsa.new_key
-#p str = rsa.encrypt("Da wE lek")
-#p rsa.decrypt(str)
